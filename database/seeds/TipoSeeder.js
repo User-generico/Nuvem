@@ -12,9 +12,18 @@
 
 /** @type {import('@adonisjs/lucid/src/Factory')} */
 const Factory = use('Factory')
+const Tipo = use ('app/Models/Tipo')
 
 class TipoSeeder {
   async run () {
+    const Tipos = [
+      {nome: "Cirrus"},
+      {nome: "Cirrus Cumulus"},
+      {nome: "Noctulucentes"},
+      {nome: "Ondulações"},
+    ];
+    await Tipo.createMany(Tipos);
+
   }
 }
 
