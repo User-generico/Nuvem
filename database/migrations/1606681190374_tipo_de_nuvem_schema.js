@@ -7,7 +7,7 @@ class TipoDeNuvemSchema extends Schema {
   up () {
     this.create('tipo_de_nuvems', (table) => {
       table.increments('id')
-      table.string('Tipo de nuvem').notNullable()
+      table.string('Tipo_de_nuvem').notNullable()
       table.timestamps()
     })
   }

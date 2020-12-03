@@ -4,6 +4,9 @@
 const Model = use('Model')
 
 class TipoDeNuvem extends Model {
+    foto(){
+        return this.hasMany("app/Models/Foto")
+    }
 }
 
 module.exports = TipoDeNuvem

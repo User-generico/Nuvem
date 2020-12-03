@@ -19,3 +19,8 @@ const Route = use('Route')
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
+
+Route.get ('/TipoDeNuvem', "TipoDeNuvemController.index");
+
+Route.post("/register", "AuthController.register");
+Route.post("/authenticate", "AuthController.authenticate");

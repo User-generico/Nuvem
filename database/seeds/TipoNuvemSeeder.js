@@ -2,7 +2,7 @@
 
 /*
 |--------------------------------------------------------------------------
-| TipoSeeder
+| TipoNuvemSeeder
 |--------------------------------------------------------------------------
 |
 | Make use of the Factory instance to seed database with dummy data or
@@ -12,19 +12,18 @@
 
 /** @type {import('@adonisjs/lucid/src/Factory')} */
 const Factory = use('Factory')
-const Tipo = use ('app/Models/Tipo')
+const Tipo = use("App/Models/TipoDeNuvem")
 
-class TipoSeeder {
+class TipoNuvemSeeder {
   async run () {
     const Tipos = [
-      {nome: "Cirrus"},
-      {nome: "Cirrus Cumulus"},
-      {nome: "Noctulucentes"},
-      {nome: "Ondulações"},
+      {	Tipo_de_nuvem: "Cirrus"},
+      {	Tipo_de_nuvem: "Cirrus Cumulus"},
+      {	Tipo_de_nuvem: "Noctulucentes"},
+      {	Tipo_de_nuvem: "Ondulações"},
     ];
     await Tipo.createMany(Tipos);
-
   }
 }
 
-module.exports = TipoSeeder
+module.exports = TipoNuvemSeeder
