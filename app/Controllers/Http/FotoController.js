@@ -3,7 +3,7 @@
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
-
+const foto = use("App/Models/Foto")
 /**
  * Resourceful controller for interacting with fotos
  */
@@ -18,6 +18,8 @@ class FotoController {
    * @param {View} ctx.view
    */
   async index ({ request, response, view }) {
+    const tipos = await foto.all();
+    return tipos;
   }
 
   /**

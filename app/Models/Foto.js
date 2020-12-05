@@ -5,7 +5,10 @@ const Model = use('Model')
 
 class Foto extends Model {
     tipo(){
-        return this.belongsTo("app/Models/TipoDeNuvem")
+        return this.belongsTo("App/Models/TipoDeNuvem")
+    }
+    galeria(){
+        return this.belongsTo("App/Models/GaleriaNuvem")
     }
 }
 

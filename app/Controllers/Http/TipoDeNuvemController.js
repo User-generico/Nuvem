@@ -3,7 +3,7 @@
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
-const Tipo = use("app/Models/TipoDeNuvem") 
+const Tipo = use("App/Models/TipoDeNuvem") 
 
 /**
  * Resourceful controller for interacting with tipodenuvems
