@@ -32,6 +32,8 @@ class FotoController {
    * @param {View} ctx.view
    */
   async create ({ request, response, view }) {
+    const tipos = await foto.all();
+    return tipos;
   }
 
   /**
