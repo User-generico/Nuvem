@@ -5,7 +5,7 @@ const Model = use('Model')
 
 class Foto extends Model {
     tipo(){
-        return this.belongsTo("App/Models/TipoDeNuvem")
+        return this.hasMany("App/Models/TipoDeNuvem")
     }
     galeria(){
         return this.belongsTo("App/Models/GaleriaNuvem")
