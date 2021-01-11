@@ -4,7 +4,7 @@
 const Model = use('Model')
 
 class Reserva extends Model {
-    galria(){
+    galeria(){
         return this.hasMany("App/Models/GaleriaNuvem")
     }
     pagina(){

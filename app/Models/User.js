@@ -7,6 +7,9 @@ const Model = use('Model')
 const Hash = use('Hash')
 
 class User extends Model {
+  tipo () {
+    return this.belongsToMany('App/Models/TipodeNuven')
+  }
   static boot () {
     super.boot()
 
