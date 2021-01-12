@@ -23,3 +23,4 @@ Route.get('/', () => {
 Route.get ('/TipoDeNuvem', "TipoDeNuvemController.index");
 Route.post("/register", "AuthController.register");
 Route.post("/authenticate", "AuthController.authenticate");
+

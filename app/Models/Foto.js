@@ -8,7 +8,7 @@ class Foto extends Model {
         return this.hasMany("App/Models/TipoDeNuvem")
     }
     galeria(){
-        return this.belongsTo("App/Models/GaleriaNuvem")
+        return this.belongsToMany("App/Models/GaleriaNuvem")
     }
 }
 
