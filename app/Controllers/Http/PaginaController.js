@@ -1,4 +1,5 @@
 'use strict'
+const pg = use("App/Models/Pagina")
 
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
@@ -20,17 +21,15 @@ class PaginaController {
   async index ({ request, response, view }) {
   }
 
-  /**
-   * Render a form to be used for creating a new pagina.
-   * GET paginas/create
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
+  
   async create ({ request, response, view }) {
   }
+  
+  async texto({request}){
+      const pg = request.only(['texto']);
+      return pg;
+  }
+
 
   /**
    * Create/save a new pagina.

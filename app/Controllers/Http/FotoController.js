@@ -45,6 +45,7 @@ class FotoController {
    * @param {Response} ctx.response
    */
   async store ({ request, response }) {
+    
   }
 
   /**
