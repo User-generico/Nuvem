@@ -4,9 +4,6 @@
 const Model = use('Model')
 
 class Pagina extends Model {
-    reserva(){
-        return this.belongsTo("App/Models/Reserva")
-    }
 }
 
 module.exports = Pagina

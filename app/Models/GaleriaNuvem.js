@@ -10,9 +10,6 @@ class GaleriaNuvem extends Model {
     user() {
         return this.hasMany("App/Models/User")
     }
-    reserva(){
-        return this.belongsTo("App/Models/Reserva")
-    }
 }
 
 module.exports = GaleriaNuvem
