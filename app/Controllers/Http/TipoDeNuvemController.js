@@ -18,7 +18,9 @@ class TipoDeNuvemController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async index ({ request, response, view }) {
+  async TodoTipo() {
+    const Tipo = await TipoDeNuvem.query().with(["Tipo_de_nuvem"]).fetch();
+    return Tipo;
   }
 
   /**
@@ -30,7 +32,7 @@ class TipoDeNuvemController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async show ({ params, request, response, view }) {
+  async UmTipo ({ params, request, response, view }) {
     const tipos = await Tipo.all();
     return tipos;
   }

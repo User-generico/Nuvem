@@ -4,6 +4,7 @@
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
+const Galeria = use ("App/Models/GaleriaNuvem")
 /**
  * Resourceful controller for interacting with galerianuvems
  */
@@ -86,7 +87,10 @@ class GaleriaNuvemController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy ({ params, request, response }) {
+  async destroy({ params, request, response }) {
+    const galeria = await Galeria.findOrFail(params.id);
+    await galeria.delete();
+    return galeria;
   }
 }
 

@@ -22,9 +22,22 @@ Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
 
-Route.get ('/TipoDeNuvem', "TipoDeNuvemController.show");
+//Autenticação
 Route.post("/register", "AuthController.register");
 Route.post("/authenticate", "AuthController.authenticate");
-Route.post("/texto", "PaginaController.texto");
+
+//Tipo de nuvem
+Route.get ('/TipoDeNuvem', "TipoDeNuvemController.UmTipo");
+Route.get("/TiposDeNuvem", "TipoDeNuvemContoller.TodoTipo");
+
+//páginas
+Route.post("/texto", "PaginaController.Texto");
+
+//galeria
+Route.delete("/ApagaNuvem", "GaleriaNuvemController.destroy");
+
+//fotos
+Route.get("/Fotos", "FotoController.TodaFoto");
+Route.post("/NovaFoto","FotoController.create");
 
 

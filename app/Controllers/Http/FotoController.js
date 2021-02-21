@@ -3,7 +3,7 @@
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
-const foto = use("App/Models/Foto")
+const Foto = use("App/Models/Foto")
 /**
  * Resourceful controller for interacting with fotos
  */
@@ -11,41 +11,30 @@ class FotoController {
   /**
    * Show a list of all fotos.
    * GET fotos
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
    */
-  async index ({ request, response, view }) {
-    const tipos = await foto.all();
+  async TodaFoto ({ request, response, view }) {
+    const tipos = await Foto.all();
     return tipos;
   }
 
   /**
    * Render a form to be used for creating a new foto.
    * GET fotos/create
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
    */
   async create ({ request, response, view }) {
-    const tipos = await foto.all();
-    return tipos;
+    const foto = await Foto.all();
+    return foto;
   }
 
   /**
    * Create/save a new foto.
    * POST fotos
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
    */
-  async store ({ request, response }) {
-    
+  async store({ request, auth }) {
+    const data = request.only(["id", "nome", "descricao"]);
+    console.log(auth.user.id);
+    const foto = await Foto.create(data);
+    return foto;
   }
 
   /**

@@ -25,7 +25,7 @@ class PaginaController {
   async create ({ request, response, view }) {
   }
   
-  async texto({request}){
+  async Texto({request}){
       const pg = request.only(['texto']);
       return pg;
   }

@@ -8,7 +8,7 @@ class FotoSchema extends Schema {
     this.create('fotos', (table) => {
       table.increments('id')
       table.string('caminho').notNullable()
-      table.text('descrição')
+      table.text('descricao')
       table.date('data da foto').notNullable()
       table.integer('tipo_id').unsigned().references('id').inTable('tipo_de_nuvems').onUpdate('cascade').onDelete("cascade")
       table.timestamps()
