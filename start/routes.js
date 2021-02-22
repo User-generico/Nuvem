@@ -27,17 +27,23 @@ Route.post("/register", "AuthController.register");
 Route.post("/authenticate", "AuthController.authenticate");
 
 //Tipo de nuvem
-Route.get ('/TipoDeNuvem', "TipoDeNuvemController.UmTipo");
-Route.get("/TiposDeNuvem", "TipoDeNuvemContoller.TodoTipo");
-
-//páginas
-Route.post("/texto", "PaginaController.Texto");
-
-//galeria
-Route.delete("/ApagaNuvem", "GaleriaNuvemController.destroy");
-
-//fotos
-Route.get("/Fotos", "FotoController.TodaFoto");
-Route.post("/NovaFoto","FotoController.create");
+Route.get('/TipoDeNuvem', "TipoDeNuvemController.UmTipo");
+Route.get("/TodosTiposDeNuvem", "TipoDeNuvemContoller.TodoTipo");
 
 
+
+
+
+
+
+Route.group(() => {
+  //galeria
+  Route.delete("/ApagaNuvem", "GaleriaNuvemController.destroy");
+
+  //fotos
+  Route.get("/Fotos", "FotoController.TodaFoto");
+  Route.post("/NovaFoto","FotoController.create");
+
+  //páginas
+  Route.post("/Texto", "PaginaController.Texto");
+}).middleware['auth'];
